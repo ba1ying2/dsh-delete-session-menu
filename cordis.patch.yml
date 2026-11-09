@@ -12,4 +12,4 @@
 # enough; no profile file has to be edited by hand.
 - insert:
     - id: session-delete
-      name: 'dsh-session-menu-delete'
+      name: 'dsh-delete-session-menu'
