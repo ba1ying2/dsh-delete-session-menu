@@ -14,7 +14,7 @@
  * clears the client's own session and projection caches for the id.
  */
 window.__ModuleLoader__.load({
-  id: 'dsh-session-menu-delete',
+  id: 'dsh-delete-session-menu',
   factory: (require) => {
     var module = { exports: {} }
     var exports = module.exports
@@ -218,7 +218,7 @@ window.__ModuleLoader__.load({
       }, DeleteSessionDialog))
     }
 
-    exports.name = 'dsh-session-menu-delete'
+    exports.name = 'dsh-delete-session-menu'
     exports.inject = ['slots']
     exports.apply = apply
     return module.exports
