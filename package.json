@@ -1,5 +1,5 @@
 {
-  "name": "dsh-session-menu-delete",
+  "name": "dsh-delete-session-menu",
   "version": "0.1.0",
   "description": "Delete a conversation from the DSH sidebar: removes the durable session log, detaches it from the workspace registry, and drops the row from every connected client.",
   "keywords": [
