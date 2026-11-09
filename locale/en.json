@@ -1,0 +1,8 @@
+{
+  "name": "Delete conversation",
+  "description": "Delete a conversation from the sidebar menu: remove its session log, tidy the Workspace registry, and drop the row from every client.",
+  "menu.delete": "Delete conversation",
+  "dialog.title": "Delete conversation",
+  "dialog.cancel": "Cancel",
+  "dialog.confirm": "Delete"
+}
