@@ -1,0 +1,15 @@
+# dsh-session-delete bundle patch
+#
+# `dsh.bundle.patch` is read when the package is installed through the official
+# channel:
+#
+#   dsh plugin --profile <name> add dsh-session-delete
+#
+# The command reconciles `dsh.profile.bundles` against installed packages and,
+# seeing this declaration, appends `dsh-session-delete` to the bundle stack.
+# Profile boot then merges THIS patch — one insert of the plugin row — exactly
+# like a manual `cordis.patch.yml` mount. Installing the package is therefore
+# enough; no profile file has to be edited by hand.
+- insert:
+    - id: session-delete
+      name: 'dsh-session-menu-delete'
