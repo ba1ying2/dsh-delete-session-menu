@@ -1,0 +1,8 @@
+{
+  "name": "删除会话",
+  "description": "在侧栏会话菜单里删除对话：移除会话日志、整理 Workspace 记账，并让所有客户端同步消失。",
+  "menu.delete": "删除会话",
+  "dialog.title": "删除会话",
+  "dialog.cancel": "取消",
+  "dialog.confirm": "删除"
+}
