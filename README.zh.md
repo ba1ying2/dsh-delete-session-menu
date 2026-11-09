@@ -1,4 +1,4 @@
-﻿# dsh-session-menu-delete
+﻿# dsh-delete-session-menu
 
 [English](README.md) | 中文
 
@@ -9,7 +9,7 @@ DSH 原生只能置顶 / 重命名 / 分叉 / 归档会话——会话日志按�
 ## 安装
 
 ```sh
-dsh plugin --profile <profile> add dsh-session-menu-delete
+dsh plugin --profile <profile> add dsh-delete-session-menu
 ```
 
 桌面端在 **设置 → 插件** 里安装即可。插件声明了 `dsh.bundle.patch`，安装本身就会把挂载行写进组合，不用手工改 `cordis.patch.yml`。
@@ -30,7 +30,7 @@ dsh plugin --profile <profile> add dsh-session-menu-delete
 | host | `lib/index.js` | 注册 `POST /session-delete/exec`；走 `ctx.connection.requestRejection` 准入；删目录、`detachSession` / `unarchiveSession` / `unpinSession`、live detach、发 `api-session/removed` |
 | client | `client.js` | 注册 `sidebar.workspaces.session.menu.item`（order 500）与 `shell.overlay` 二次确认框；确认后 POST 并刷新 |
 
-`package.json` 的 `dsh.client`（`platform: web`）与 `exports["./client"]` 让 `dsh-client-modules` 把 `client.js` 作为 `/plugins/dsh-session-menu-delete/client.js` 提供给浏览器，无需额外接线。
+`package.json` 的 `dsh.client`（`platform: web`）与 `exports["./client"]` 让 `dsh-client-modules` 把 `client.js` 作为 `/plugins/dsh-delete-session-menu/client.js` 提供给浏览器，无需额外接线。
 
 ### 路由
 
@@ -63,7 +63,7 @@ content-type: application/json
 # 本地挂载：在 profile 的 cordis.patch.yml 里加
 - insert:
     - id: session-delete
-      name: dsh-session-menu-delete
+      name: dsh-delete-session-menu
 ```
 
 改完 `client.js` 后刷新一次 GUI 即可（`dsh-client-modules` 按文件元数据派生 rev）。
