@@ -1,4 +1,4 @@
-﻿# dsh-session-menu-delete
+﻿# dsh-delete-session-menu
 
 English | [中文](README.zh.md)
 
@@ -9,7 +9,7 @@ DSH natively offers pin / rename / fork / archive only — session logs are appe
 ## Install
 
 ```sh
-dsh plugin --profile <profile> add dsh-session-menu-delete
+dsh plugin --profile <profile> add dsh-delete-session-menu
 ```
 
 On DSH Desktop use **Settings → Plugins**. The package declares `dsh.bundle.patch`, so installing it writes the mount row into the composition; no manual `cordis.patch.yml` edit is needed.
@@ -30,7 +30,7 @@ Any conversation row → hover → `…` at the row's end → **Delete conversat
 | host | `lib/index.js` | `POST /session-delete/exec`, admitted by `ctx.connection.requestRejection`; removes directories, detaches registry accounting, detaches a live session, emits `api-session/removed` |
 | client | `client.js` | registers `sidebar.workspaces.session.menu.item` (order 500) and the `shell.overlay` confirmation dialog; posts on confirm and reloads |
 
-`dsh.client` (`platform: web`) plus `exports["./client"]` let `dsh-client-modules` serve `client.js` as `/plugins/dsh-session-menu-delete/client.js` — no extra wiring.
+`dsh.client` (`platform: web`) plus `exports["./client"]` let `dsh-client-modules` serve `client.js` as `/plugins/dsh-delete-session-menu/client.js` — no extra wiring.
 
 ### Route
 
@@ -63,7 +63,7 @@ Failure: `{ "ok": false, "error": "…" }` — 400 bad request, 403 admission, 4
 # local mount, in the profile's cordis.patch.yml
 - insert:
     - id: session-delete
-      name: dsh-session-menu-delete
+      name: dsh-delete-session-menu
 ```
 
 `client.js` picks up a new revision after a page refresh (`dsh-client-modules` derives the rev from file metadata).
